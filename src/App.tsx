@@ -1,10 +1,15 @@
-import React from 'react';
+import React from 'react'
+import Home from './pages/Home';
+
+import GlobalStyle from './theme/globalStyles';
+
 
 function App() {
   return (
-    <div className="App">
-          Projeto CCB
-    </div>
+    <>
+      <GlobalStyle />
+      <Home/>
+    </>
   );
 }
 
