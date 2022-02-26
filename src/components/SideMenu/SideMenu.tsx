@@ -8,14 +8,9 @@ const SideMenu = () => {
 
     return (
             <S.Container>
+                            <S.Title>CCB</S.Title>
                 <S.Navigation>
                 <S.List>
-                    <S.ListItem>
-                        <S.Link>
-                            <S.title>CCB</S.title>
-                        </S.Link>
-                    </S.ListItem>
-
                     <S.ListItem>
                         <S.Link>
                             <S.icon><FontAwesomeIcon icon={faPlaceOfWorship} /></S.icon>

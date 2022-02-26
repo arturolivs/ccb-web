@@ -1,52 +1,63 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    position: relative;
-    width: 100%;
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(180deg, var(--primary-color) 0%, var(--primary-color-dark-2) 100%);
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+`
+export const Title = styled.span`
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 5rem;
+    color: var(--primary-light-4);
 `
 
-export const Navigation = styled.nav`
-    position: fixed;
-    width: 300px;
-    height: 100%;
-    background: var(--primary-color-dark-1);
-    border-left: 10px solid var(--primary-dark-1);
-    transition: 0.5s;
-    overflow: hidden;`
+export const Navigation = styled.nav``
 
 export const List = styled.ul`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
 `
 
 export const ListItem = styled.li`
-    position: relative;
     width: 100%;
+    height:60px;
     list-style: none;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
 
     &:hover {
         background: var(--primary-light-4);
+
+        a {
+            color: var(--primary-color-dark-1);
+        }
+
+        a::after { 
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: -50px;
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            border-radius: 50%;
+            box-shadow: 35px -35px 0 10px var(--white);
+            pointer-events: none;
+        }
     }
-
-    &:nth-child(1) {
-    margin-bottom: 40px;
-    pointer-events: none;
-}
-
 `
 
 export const Link = styled.a`
-    position: relative;
     width: 100%;
+    height: 100%;
+    padding-left: 15px;
     display: flex;
     column-gap: 5px;
-    text-decoration: none;
+    align-items: center;
     color: var(--primary-light-4);
-
 `
 
 export const icon = styled.span``
