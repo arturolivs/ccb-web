@@ -1,10 +1,12 @@
 import { createGlobalStyle } from 'styled-components'
  
 const GlobalStyle = createGlobalStyle`
-
+  
   :root {
-      --primary-light-4: #F7FBFD;
-      --primary-light-3: #C2E1EF;
+      --primary-color-light-4: #F7FBFD;
+      --primary-color-light-3: #C2E1EF;
+      --primary-color-light-2: #71B9DA;
+      --primary-color-light-1: #349BCB;
       --primary-color: #20607E;
       --primary-color-dark-1: #1A4E65;
       --primary-color-dark-2: #153E51;
@@ -14,9 +16,9 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    background: var(--primary-light-4);
+    background: var(--primary-color-light-4);
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: "Roboto", sans-serif;
   }
 
   a {

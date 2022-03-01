@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
     width: 250px;
     height: 100vh;
-    background: linear-gradient(180deg, var(--primary-color) 0%, var(--primary-color-dark-2) 100%);
+    background: linear-gradient(180deg, var(--primary-color-light-1) 0%, var(--primary-color) 100%);
     padding-left: 15px;
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@ export const Title = styled.span`
     font-weight: bold;
     font-size: 2rem;
     line-height: 5rem;
-    color: var(--primary-light-4);
+    color: var(--primary-color-light-4);
 `
 
 export const Navigation = styled.nav``
@@ -29,7 +29,7 @@ export const ListItem = styled.li`
     border-bottom-left-radius: 30px;
 
     &:hover {
-        background: var(--primary-light-4);
+        background: var(--primary-color-light-4);
 
         a {
             color: var(--primary-color-dark-1);
@@ -57,7 +57,7 @@ export const Link = styled.a`
     display: flex;
     column-gap: 5px;
     align-items: center;
-    color: var(--primary-light-4);
+    color: var(--primary-color-light-4);
 `
 
 export const icon = styled.span``
