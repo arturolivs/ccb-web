@@ -3,7 +3,11 @@ import styled from 'styled-components'
 export const Container = styled.div`
     width: 250px;
     height: 100vh;
-    background: linear-gradient(180deg, var(--primary-color-light-1) 0%, var(--primary-color) 100%);
+    background: linear-gradient(
+        180deg,
+        var(--primary-color-light-1) 0%,
+        var(--primary-color) 100%
+    );
     padding-left: 15px;
     display: flex;
     flex-direction: column;
@@ -18,12 +22,11 @@ export const Title = styled.span`
 
 export const Navigation = styled.nav``
 
-export const List = styled.ul`
-`
+export const List = styled.ul``
 
 export const ListItem = styled.li`
     width: 100%;
-    height:60px;
+    height: 60px;
     list-style: none;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
@@ -35,7 +38,7 @@ export const ListItem = styled.li`
             color: var(--primary-color-dark-1);
         }
 
-        a::after { 
+        a::after {
             content: '';
             position: absolute;
             right: 0;

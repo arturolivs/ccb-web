@@ -3,10 +3,7 @@ import React from 'react'
 import SideMenu from '../../components/SideMenu'
 
 const Home = () => {
-
-    return (
-        <SideMenu/>
-    )
+    return <SideMenu />
 }
 
 export default Home
