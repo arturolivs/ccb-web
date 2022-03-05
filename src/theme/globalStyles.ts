@@ -19,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
     background: var(--primary-color-light-4);
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
+    overflow: hidden;
   }
 
   a {

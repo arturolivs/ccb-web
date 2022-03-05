@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const Container = styled.div`
     width: 250px;
@@ -53,7 +54,7 @@ export const ListItem = styled.li`
     }
 `
 
-export const Link = styled.a`
+export const Item = styled(Link)`
     width: 100%;
     height: 100%;
     padding-left: 15px;

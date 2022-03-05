@@ -14,21 +14,21 @@ const SideMenu = () => {
             <S.Navigation>
                 <S.List>
                     <S.ListItem>
-                        <S.Link>
+                        <S.Item to="/igrejas">
                             <S.icon>
                                 <FontAwesomeIcon icon={faPlaceOfWorship} />
                             </S.icon>
                             <S.title>Igrejas</S.title>
-                        </S.Link>
+                        </S.Item>
                     </S.ListItem>
 
                     <S.ListItem>
-                        <S.Link>
+                        <S.Item to="/anomalias">
                             <S.icon>
                                 <FontAwesomeIcon icon={faScrewdriverWrench} />
                             </S.icon>
                             <S.title>Anomalias</S.title>
-                        </S.Link>
+                        </S.Item>
                     </S.ListItem>
                 </S.List>
             </S.Navigation>

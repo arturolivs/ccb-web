@@ -1,9 +1,7 @@
 import React from 'react'
 
-import SideMenu from '../../components/SideMenu'
-
 const Home = () => {
-    return <SideMenu />
+    return <h1>home</h1>
 }
 
 export default Home
