@@ -5,6 +5,7 @@ import {
     faPlaceOfWorship,
     faScrewdriverWrench,
 } from '@fortawesome/free-solid-svg-icons'
+
 import * as S from './SideMenu.styles'
 
 const SideMenu = () => {

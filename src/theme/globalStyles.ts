@@ -11,6 +11,11 @@ const GlobalStyle = createGlobalStyle`
       --primary-color-dark-1: #1A4E65;
       --primary-color-dark-2: #153E51;
       --primary-color-dark-3: #102F3D;
+
+      --gray-5: #808080;
+      --gray-6: #595959;
+
+      --danger: #ff3758;
   } 
 
   body {
@@ -20,6 +25,10 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
     overflow: hidden;
+  }
+
+  h1 {
+    color: var(---primary-color-dark-2);
   }
 
   a {
