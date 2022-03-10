@@ -1,3 +1,3 @@
-import Churth from './Churth'
+import Church from './Church'
 
-export default Churth
+export default Church
