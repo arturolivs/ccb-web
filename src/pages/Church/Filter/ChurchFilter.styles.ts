@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
     width: 100%;
-    background-color: #fcfcfc;
+    background-color: var(--gray-0);
     padding: 1.5rem;
     border-radius: 15px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
@@ -15,12 +15,15 @@ export const Form = styled.form`
 `
 
 export const InputLabel = styled.label`
+    &:focus-within span {
+        font-weight: bold;
+        color: var(--primary-color-high-light);
+    }
+`
+
+export const LabelText = styled.span`
     color: var(--gray-6);
     transition: all 0.3s;
-
-    &:focus {
-        color: rgba(64, 155, 255, 0.8);
-    }
 `
 
 export const Input = styled.input`
@@ -39,7 +42,7 @@ export const Input = styled.input`
 
     &:focus {
         outline: none;
-        border: 1px solid rgba(64, 155, 255, 0.8);
+        border: 1px solid var(--primary-color-high-light);
     }
 `
 

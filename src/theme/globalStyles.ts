@@ -12,6 +12,8 @@ const GlobalStyle = createGlobalStyle`
       --primary-color-dark-2: #153E51;
       --primary-color-dark-3: #102F3D;
 
+      --primary-color-high-light: rgba(64, 155, 255, 0.8);
+
       --gray-0: #FCFCFC;
       --gray-5: #808080;
       --gray-6: #595959;

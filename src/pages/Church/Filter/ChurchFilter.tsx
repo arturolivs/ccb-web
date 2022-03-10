@@ -10,12 +10,12 @@ const ChurchFilter = () => {
         <S.Container>
             <S.Form>
                 <S.InputLabel>
-                    Localidade
+                    <S.LabelText>Localidade</S.LabelText>
                     <S.Input name="local" type="text" />
                 </S.InputLabel>
 
                 <S.InputLabel>
-                    Cod. Endereço
+                    <S.LabelText>Cod. Endereço</S.LabelText>
                     <S.Input name="cod-address" type="text" />
                 </S.InputLabel>
 
