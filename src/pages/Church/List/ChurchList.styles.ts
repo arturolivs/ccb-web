@@ -23,7 +23,7 @@ export const Row = styled.tr`
     &:hover {
         color: var(--primary-color-light-1);
         font-weight: bold;
-        background-color: var(--primary-color-light-3);
+        background-color: var(--primary-color-light-4);
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 
         svg.fa-trash-can {

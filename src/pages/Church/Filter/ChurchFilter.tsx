@@ -11,7 +11,7 @@ const ChurchFilter = () => {
             <S.Form>
                 <S.InputLabel>
                     <S.LabelText>Localidade</S.LabelText>
-                    <S.Input name="local" type="text" />
+                    <S.Input name="locale" type="text" />
                 </S.InputLabel>
 
                 <S.InputLabel>
