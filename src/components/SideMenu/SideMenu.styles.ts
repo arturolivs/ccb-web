@@ -33,7 +33,7 @@ export const ListItem = styled.li`
     border-bottom-left-radius: 30px;
 
     &:hover {
-        background: var(--primary-color-light-4);
+        background: var(--gray-0);
 
         a {
             color: var(--primary-color-dark-1);

@@ -2,19 +2,28 @@ import Church from '../../../types/Church'
 
 export default [
     {
+        id: '1',
         locale: 'Curado III',
-        CodAddress: 'BR-15-0046',
+        codAddress: 'BR-15-0046',
     },
     {
+        id: '2',
         locale: 'Sucupira',
-        CodAddress: 'BR-15-0047',
+        codAddress: 'BR-15-0047',
     },
     {
+        id: '3',
         locale: 'UR 11',
-        CodAddress: 'BR-15-0048',
+        codAddress: 'BR-15-0048',
     },
     {
+        id: '4',
         locale: 'Prazeres',
-        CodAddress: 'BR-15-0049',
+        codAddress: 'BR-15-0049',
+    },
+    {
+        id: '5',
+        locale: 'Barra de Jangada',
+        codAddress: 'BR-15-0050',
     },
 ] as Church[]
