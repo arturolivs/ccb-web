@@ -1,7 +1,8 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
-import Church from './pages/Church'
+import Churchs from './pages/Churchs'
+import ChurchEdit from './pages/Churchs/Edit'
 import Anomaly from './pages/Anomaly'
 
 import GlobalStyle from './theme/globalStyles'
@@ -17,7 +18,8 @@ const App = () => {
             <S.Content>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="igrejas" element={<Church />} />
+                    <Route path="igrejas" element={<Churchs />} />
+                    <Route path="igrejas/edit" element={<ChurchEdit />} />
                     <Route path="anomalias" element={<Anomaly />} />
                 </Routes>
             </S.Content>

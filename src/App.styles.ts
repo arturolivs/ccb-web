@@ -6,6 +6,7 @@ export const Container = styled.div`
 export const Content = styled.div`
     height: 100vh;
     overflow: auto;
+    padding: 2rem 8rem;
 
     display: flex;
     flex-direction: column;

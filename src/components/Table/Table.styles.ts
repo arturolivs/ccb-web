@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const Title = styled.h1``
@@ -49,7 +50,7 @@ export const CellIcon = styled.td`
     column-gap: 15px;
 `
 
-export const Button = styled.button`
+export const Button = styled(Link)`
     background-color: transparent;
     width: 2rem;
     height: 2rem;

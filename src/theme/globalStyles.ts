@@ -31,6 +31,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
+    margin: 0;
+    padding: 0;
     color: var(---primary-color-dark-2);
   }
 
