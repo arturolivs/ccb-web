@@ -1,3 +1,3 @@
-import Edit from './Edit'
+import ChurchEdit from './ChurchEdit'
 
-export default Edit
+export default ChurchEdit

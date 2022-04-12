@@ -19,7 +19,7 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="igrejas" element={<Churchs />} />
-                    <Route path="igrejas/edit" element={<ChurchEdit />} />
+                    <Route path="igrejas/editar" element={<ChurchEdit />} />
                     <Route path="anomalias" element={<Anomaly />} />
                 </Routes>
             </S.Content>

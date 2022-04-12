@@ -1,27 +1,16 @@
 import React from 'react'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPen, faTrashCan } from '@fortawesome/free-solid-svg-icons'
-
-import * as S from './ChurchFilter.styles'
+import Button from '../../../components/Button'
+import Form from '../../../components/Form'
+import TextInput from '../../../components/TextInput'
 
 const ChurchFilter = () => {
     return (
-        <S.Container>
-            <S.Form>
-                <S.InputLabel>
-                    <S.LabelText>Localidade</S.LabelText>
-                    <S.Input name="locale" type="text" />
-                </S.InputLabel>
-
-                <S.InputLabel>
-                    <S.LabelText>Cod. Endereço</S.LabelText>
-                    <S.Input name="cod-address" type="text" />
-                </S.InputLabel>
-
-                <S.Button type="button" value="Filtrar" />
-            </S.Form>
-        </S.Container>
+        <Form onSubmit={(e) => console.log(e)}>
+            <TextInput label="Localidade" name="locale" />
+            <TextInput label="Cod. Endereço" name="cod-address" />
+            <Button type="submit" value="Filtrar" />
+        </Form>
     )
 }
 

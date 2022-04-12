@@ -40,7 +40,7 @@ const Table = ({ columns, data }: TableProps) => {
                                     )
                             )}
                             <S.CellIcon>
-                                <S.Button to="/igrejas/edit">
+                                <S.Button to="/igrejas/editar">
                                     <FontAwesomeIcon icon={faPen} />
                                 </S.Button>
 
