@@ -51,6 +51,9 @@ export const CellIcon = styled.td`
 `
 
 export const Button = styled(Link)`
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: transparent;
     width: 2rem;
     height: 2rem;

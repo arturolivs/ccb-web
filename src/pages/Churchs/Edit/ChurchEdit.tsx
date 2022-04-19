@@ -1,13 +1,14 @@
 import React from 'react'
 
 import ChurchEditForm from './Form'
+import * as S from './ChurchEdit.styles'
 
 const ChurchEdit = () => {
     return (
-        <>
-            <h1>Editar Igreja</h1>
+        <S.Container>
+            <S.Title>Editar Igreja</S.Title>
             <ChurchEditForm />
-        </>
+        </S.Container>
     )
 }
 
