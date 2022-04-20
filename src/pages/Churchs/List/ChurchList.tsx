@@ -1,9 +1,7 @@
 import React from 'react'
 import Table from '../../../components/Table'
 
-import mock from './mock'
-
-import Church from '../../../types/Church'
+import churchsMock from '../Churchs.data'
 
 const cols = [
     { id: 'locale', label: 'Localidade' },
@@ -11,7 +9,7 @@ const cols = [
 ]
 
 const ChurchList = () => {
-    return <Table columns={cols} data={mock} />
+    return <Table columns={cols} data={churchsMock} />
 }
 
 export default ChurchList

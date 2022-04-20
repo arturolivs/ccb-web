@@ -1,11 +1,11 @@
 import React from 'react'
-import { SideMenuItem } from '../SideMenu.types'
+import { SideMenuItem as ISideMenuItem } from '../SideMenu.types'
 
 import * as S from './SideMenuItem.styles'
 
 interface SideMenuItemProps {
-    item: SideMenuItem
-    selectItem: (item: SideMenuItem) => void
+    item: ISideMenuItem
+    selectItem: (item: ISideMenuItem) => void
     selected: boolean
 }
 

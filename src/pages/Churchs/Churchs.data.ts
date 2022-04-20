@@ -1,6 +1,6 @@
-import Church from '../../../types/Church'
+import Church from '../../types/Church'
 
-export default [
+export const churchMock: Church[] = [
     {
         id: '1',
         locale: 'Curado III',
@@ -26,4 +26,6 @@ export default [
         locale: 'Barra de Jangada',
         codAddress: 'BR-15-0050',
     },
-] as Church[]
+]
+
+export default churchMock

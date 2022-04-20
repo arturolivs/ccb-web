@@ -12,4 +12,5 @@ export const Content = styled.div`
     flex-direction: column;
     align-items: center;
     flex-grow: 1;
+    row-gap: 1.5rem;
 `

@@ -1,3 +1,3 @@
-import Church from './Church'
+import Churchs from './Churchs'
 
-export default Church
+export default Churchs
