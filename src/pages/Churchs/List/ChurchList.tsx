@@ -8,8 +8,6 @@ const cols = [
     { id: 'codEndereco', label: 'Cod. Endereço' },
 ]
 
-const ChurchList = () => {
-    return <Table columns={cols} data={churchsMock} />
-}
+const ChurchList = () => <Table columns={cols} data={churchsMock} />
 
 export default ChurchList
