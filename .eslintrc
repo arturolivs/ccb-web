@@ -43,6 +43,12 @@
           "namedComponents": "arrow-function",
           "unnamedComponents": "arrow-function"
       }
+  ],
+  "prettier/prettier": [
+    "error",
+    {
+      "endOfLine": "auto"
+    }
   ]
   },
 
@@ -50,12 +56,5 @@
     "import/resolver": {
       "typescript": {}
     }
-  },
-
-  "prettier/prettier": [
-    "error",
-    {
-      "endOfLine": "auto"
-    }
-  ]
+  }
 }

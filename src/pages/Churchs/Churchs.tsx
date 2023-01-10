@@ -1,17 +1,19 @@
 import React from 'react'
 
 import ChurchList from './List'
-import ChurchFilter from './Filter'
 
-const Churth = () => {
+import * as S from './Churchs.styles'
+
+const Churths = () => {
     return (
-        <>
-            <h1>Igrejas</h1>
+        <S.Churths>
+            <S.Title>Igrejas</S.Title>
 
-            <ChurchFilter />
+            <S.Filter />
+
             <ChurchList />
-        </>
+        </S.Churths>
     )
 }
 
-export default Churth
+export default Churths

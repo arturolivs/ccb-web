@@ -1,7 +1,6 @@
 import React from 'react'
-import Card from '../Card'
 
-import FormStyle from './Form.styles'
+import FormStyled from './Form.styles'
 
 interface FormProps {
     onSubmit: (e: React.FormEvent<HTMLFormElement>) => void
@@ -13,11 +12,7 @@ const Form = ({ onSubmit, children }: FormProps) => {
         e.preventDefault()
         onSubmit(e)
     }
-    return (
-        <Card>
-            <FormStyle onSubmit={handleSubmit}>{children}</FormStyle>
-        </Card>
-    )
+    return <FormStyled onSubmit={handleSubmit}>{children}</FormStyled>
 }
 
 export default Form

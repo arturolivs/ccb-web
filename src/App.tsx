@@ -15,6 +15,7 @@ const App = () => {
     return (
         <S.Container>
             <SideMenu />
+
             <S.Content>
                 <Routes>
                     <Route path="/" element={<Home />} />
