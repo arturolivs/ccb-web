@@ -15,7 +15,7 @@ const useGetAsync = <T>(url: string, params?: AxiosRequestConfig) => {
                 setData(response.data)
             } catch (err) {
                 if (axios.isAxiosError(err)) {
-                    setError(`Error with Message: ${err.message}`)
+                    setError(`Error Message: ${err.message}`)
                 } else {
                     setError(err as string)
                 }

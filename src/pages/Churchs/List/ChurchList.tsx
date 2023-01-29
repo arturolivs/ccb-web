@@ -10,7 +10,7 @@ const cols = [
 const ChurchList = () => {
     const [data, error, loading] = useGetAsync<Church[]>('churchs')
 
-    if (error) return null
+    if (error) return <h1>{error}</h1>
     if (loading) return <h1>Carregando</h1>
     if (data) return <Table columns={cols} data={data} />
 
