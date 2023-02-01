@@ -3,6 +3,7 @@ import React from 'react'
 import ChurchList from './List'
 
 import * as S from './Churchs.styles'
+import Notification from '../../components/Notification'
 
 const Churths = () => {
     return (
@@ -12,6 +13,7 @@ const Churths = () => {
             <S.Filter />
 
             <ChurchList />
+            <Notification />
         </S.Churths>
     )
 }
