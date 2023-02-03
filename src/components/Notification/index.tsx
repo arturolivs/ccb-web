@@ -1,24 +1,43 @@
 import React from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleCheck, faXmark } from '@fortawesome/free-solid-svg-icons'
+import {
+    faCircleCheck,
+    faXmark,
+    faXmarkCircle,
+} from '@fortawesome/free-solid-svg-icons'
 import * as S from './Notification.styles'
 
-const Notification = () => {
+export type NotificationType = 'success' | 'error'
+
+export interface NotificationProps {
+    type: NotificationType
+    title: string
+    message: string
+}
+
+const Notification = ({ title, message, type }: NotificationProps) => {
     return (
-        <S.Container>
-            <FontAwesomeIcon
-                icon={faCircleCheck}
-                size="lg"
-                color="var(--success)"
-            />
+        <S.Container type={type}>
+            {type === 'success' && (
+                <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    size="lg"
+                    color="var(--success)"
+                />
+            )}
+
+            {type === 'error' && (
+                <FontAwesomeIcon
+                    icon={faXmarkCircle}
+                    size="lg"
+                    color="var(--error)"
+                />
+            )}
 
             <S.Content>
-                <S.Title>Info</S.Title>
-                <S.Message>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut
-                </S.Message>
+                <S.Title>{title}</S.Title>
+                <S.Message>{message}</S.Message>
             </S.Content>
 
             <S.Close

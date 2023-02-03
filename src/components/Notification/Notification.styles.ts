@@ -1,34 +1,43 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styled from 'styled-components'
+import { NotificationType } from '.'
 
-export const Container = styled.div`
+interface ContainerProp {
+    type: NotificationType
+}
+
+export const Container = styled.div<ContainerProp>`
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 1rem 0.5rem;
+    justify-content: flex-start;
     position: relative;
     overflow: hidden;
-
+    min-width: 20rem;
+    padding: 1rem 0.5rem;
     background-color: var(--gray-0);
     border-radius: 0.5rem;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.15);
 
     svg:first-child {
-        padding: 1rem !important;
+        padding: 1rem;
     }
 
     &::before {
         content: '';
         position: absolute;
-        background-color: var(--success);
-        width: 0.5rem;
-        height: 100%;
         top: 0;
         left: 0;
+        width: 0.5rem;
+        height: 100%;
+
+        background-color: ${({ type }) =>
+            (type === 'success' ? 'var(--success)' : null) ??
+            (type === 'error' ? 'var(--error)' : null)};
     }
 `
 
 export const Content = styled.div`
+    flex: 1;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -45,6 +54,7 @@ export const Message = styled.span`
     color: var(--gray-6);
 `
 export const Close = styled(FontAwesomeIcon)`
-    margin: 0 1rem !important;
+    margin: 0 1rem;
+    align-self: flex-start;
     cursor: pointer;
 `

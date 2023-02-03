@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
       --gray-6: #595959;
 
       --success: #46D664;
-      --danger: #f84261;
+      --error: #f84261;
   } 
 
   body {

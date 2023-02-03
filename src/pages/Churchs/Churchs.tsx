@@ -13,7 +13,20 @@ const Churths = () => {
             <S.Filter />
 
             <ChurchList />
-            <Notification />
+
+            <Notification
+                type="success"
+                title="Mensagem sucesso"
+                message="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut"
+            />
+
+            <Notification
+                type="error"
+                title="Mensagem erro"
+                message="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut"
+            />
         </S.Churths>
     )
 }
