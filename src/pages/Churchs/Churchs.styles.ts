@@ -15,3 +15,5 @@ export const Churths = styled.div`
     flex-direction: column;
     align-items: center;
 `
+
+export const BT = styled.button``

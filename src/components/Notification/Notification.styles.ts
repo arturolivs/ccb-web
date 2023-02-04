@@ -1,10 +1,23 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styled from 'styled-components'
-import { NotificationType } from '.'
+import { NotificationType } from './Notification.types'
 
 interface ContainerProp {
     type: NotificationType
 }
+
+export const Box = styled.div`
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 0.5rem;
+`
 
 export const Container = styled.div<ContainerProp>`
     display: flex;

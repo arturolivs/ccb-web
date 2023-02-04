@@ -7,16 +7,9 @@ import {
     faXmarkCircle,
 } from '@fortawesome/free-solid-svg-icons'
 import * as S from './Notification.styles'
+import { Notification } from './Notification.types'
 
-export type NotificationType = 'success' | 'error'
-
-export interface NotificationProps {
-    type: NotificationType
-    title: string
-    message: string
-}
-
-const Notification = ({ title, message, type }: NotificationProps) => {
+export default ({ title, message, type }: Omit<Notification, 'id'>) => {
     return (
         <S.Container type={type}>
             {type === 'success' && (
@@ -48,5 +41,3 @@ const Notification = ({ title, message, type }: NotificationProps) => {
         </S.Container>
     )
 }
-
-export default Notification

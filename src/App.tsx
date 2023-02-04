@@ -10,22 +10,25 @@ import GlobalStyle from './theme/globalStyles'
 import './theme/fonts.css'
 import SideMenu from './components/SideMenu'
 import * as S from './App.styles'
+import { NotificationProvider } from './hooks/useNotifications'
 
 const App = () => {
     return (
-        <S.Container>
-            <SideMenu />
+        <NotificationProvider>
+            <S.Container>
+                <SideMenu />
 
-            <S.Content>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="igrejas" element={<Churchs />} />
-                    <Route path="igrejas/editar" element={<ChurchEdit />} />
-                    <Route path="anomalias" element={<Anomaly />} />
-                </Routes>
-            </S.Content>
-            <GlobalStyle />
-        </S.Container>
+                <S.Content>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="igrejas" element={<Churchs />} />
+                        <Route path="igrejas/editar" element={<ChurchEdit />} />
+                        <Route path="anomalias" element={<Anomaly />} />
+                    </Routes>
+                </S.Content>
+                <GlobalStyle />
+            </S.Container>
+        </NotificationProvider>
     )
 }
 
