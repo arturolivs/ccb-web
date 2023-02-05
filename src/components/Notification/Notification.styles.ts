@@ -1,25 +1,27 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styled from 'styled-components'
+import { fade } from '../../theme/globalStyles'
+import { DISPLAY_TIME } from './Notification.constant'
 import { NotificationType } from './Notification.types'
 
 interface ContainerProp {
     type: NotificationType
 }
 
-export const Box = styled.div`
+export const Notifications = styled.div`
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, 0);
 
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
     row-gap: 0.5rem;
 `
 
-export const Container = styled.div<ContainerProp>`
+export const Notification = styled.div<ContainerProp>`
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -30,6 +32,11 @@ export const Container = styled.div<ContainerProp>`
     background-color: var(--gray-0);
     border-radius: 0.5rem;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.15);
+    transition: all 0.5s;
+
+    opacity: 0;
+    animation: ${fade} ease-in-out ${DISPLAY_TIME}s;
+    animation-fill-mode: forwards;
 
     svg:first-child {
         padding: 1rem;

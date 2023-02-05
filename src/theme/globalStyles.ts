@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, keyframes } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   
@@ -46,7 +46,14 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+  
+`
 
+export const fade = keyframes`
+  0% { opacity: 0 }
+  5% { opacity: 1 } 
+  95% { opacity: 1 }
+  100% { opacity: 0 }
 `
 
 export default GlobalStyle

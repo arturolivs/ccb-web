@@ -9,9 +9,9 @@ import {
 import * as S from './Notification.styles'
 import { Notification } from './Notification.types'
 
-export default ({ title, message, type }: Omit<Notification, 'id'>) => {
+export default ({ id, title, message, type, onClose }: Notification) => {
     return (
-        <S.Container type={type}>
+        <S.Notification type={type}>
             {type === 'success' && (
                 <FontAwesomeIcon
                     icon={faCircleCheck}
@@ -36,8 +36,8 @@ export default ({ title, message, type }: Omit<Notification, 'id'>) => {
             <S.Close
                 icon={faXmark}
                 size="lg"
-                onClick={() => console.log('Fechou')}
+                onClick={() => onClose && onClose(id)}
             />
-        </S.Container>
+        </S.Notification>
     )
 }

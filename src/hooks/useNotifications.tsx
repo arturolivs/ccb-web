@@ -8,12 +8,12 @@ import React, {
 import { v4 as uuidv4 } from 'uuid'
 
 import NotificationComponent from '../components/Notification'
-import { Box } from '../components/Notification/Notification.styles'
+import { Notifications } from '../components/Notification/Notification.styles'
 import { Notification } from '../components/Notification/Notification.types'
 
 interface NotificationContextProps {
-    addNotification(notification: Omit<Notification, 'id'>): void
-    removeNotification(id: string): void
+    success(title: string, message: string): void
+    error(title: string, message: string): void
 }
 
 const NotificationContext = createContext<NotificationContextProps>(
@@ -23,7 +23,7 @@ const NotificationContext = createContext<NotificationContextProps>(
 const NotificationProvider = ({ children }: { children: React.ReactNode }) => {
     const [notifications, setNotifications] = useState<Notification[]>([])
 
-    const addNotification = useCallback(
+    const add = useCallback(
         ({ type, title, message }: Omit<Notification, 'id'>) => {
             const id = uuidv4()
 
@@ -39,33 +39,45 @@ const NotificationProvider = ({ children }: { children: React.ReactNode }) => {
         []
     )
 
-    const removeNotification = useCallback((id: string) => {
+    const close = useCallback((id: string) => {
         setNotifications((state) =>
             state.filter((notification) => notification.id !== id)
         )
     }, [])
 
+    const success = useCallback(
+        (title, message) => add({ type: 'success', title, message }),
+        [add]
+    )
+
+    const error = useCallback(
+        (title, message) => add({ type: 'error', title, message }),
+        [add]
+    )
+
     const value = useMemo(
         () => ({
-            addNotification,
-            removeNotification,
+            success,
+            error,
         }),
-        [addNotification, removeNotification]
+        [success, error]
     )
 
     return (
         <NotificationContext.Provider value={value}>
             {children}
-            <Box>
+            <Notifications>
                 {notifications.map(({ id, type, title, message }) => (
                     <NotificationComponent
                         key={id}
+                        id={id}
                         type={type}
                         title={title}
                         message={message}
+                        onClose={close}
                     />
                 ))}
-            </Box>
+            </Notifications>
         </NotificationContext.Provider>
     )
 }
