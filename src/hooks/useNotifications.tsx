@@ -79,7 +79,7 @@ const NotificationProvider = ({ children }: { children: React.ReactNode }) => {
                             type={type}
                             title={title}
                             message={message}
-                            onClose={remove}
+                            close={remove}
                         />
                     ))}
                 </Notifications>

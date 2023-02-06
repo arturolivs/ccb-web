@@ -5,5 +5,5 @@ export interface Notification {
     type: NotificationType
     title: string
     message: string
-    onClose?: (id: string) => void
+    close?: (id: string) => void
 }

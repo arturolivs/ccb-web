@@ -11,7 +11,7 @@ import { noop } from 'lodash'
 import * as S from './Notification.styles'
 import { Notification } from './Notification.types'
 
-export default ({ id, title, message, type, onClose = noop }: Notification) => {
+export default ({ id, title, message, type, close = noop }: Notification) => {
     return (
         <S.Notification type={type}>
             {type === 'success' && (
@@ -35,7 +35,7 @@ export default ({ id, title, message, type, onClose = noop }: Notification) => {
                 <S.Message>{message}</S.Message>
             </S.Content>
 
-            <S.Close icon={faXmark} size="lg" onClick={() => onClose(id)} />
+            <S.Close icon={faXmark} size="lg" onClick={() => close(id)} />
         </S.Notification>
     )
 }
