@@ -8,6 +8,7 @@ const useGetAsync = <T>(url: string, params?: AxiosRequestConfig) => {
     const [data, setData] = useState<T>()
     const [error, setError] = useState<string>()
     const [loading, setLoading] = useState<boolean>(true)
+    const { showError } = useNotification()
 
     useEffect(() => {
         async function run() {
@@ -16,7 +17,7 @@ const useGetAsync = <T>(url: string, params?: AxiosRequestConfig) => {
                 setData(response.data)
             } catch (err) {
                 if (axios.isAxiosError(err)) {
-                    setError(`Error Message: ${err.message}`)
+                    setError(err.message)
                 } else {
                     setError(err as string)
                 }
@@ -28,6 +29,11 @@ const useGetAsync = <T>(url: string, params?: AxiosRequestConfig) => {
 
         run()
     }, [url, params])
+
+    useEffect(
+        () => (error ? showError('Ocorreu um erro', error) : undefined),
+        [error, showError]
+    )
 
     return { data, error, loading } as const
 }

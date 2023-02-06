@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styled from 'styled-components'
 import { fade } from '../../theme/globalStyles'
-import { DISPLAY_TIME } from './Notification.constant'
+import { SECONDS_OF_DISPLAY } from './Notification.constants'
 import { NotificationType } from './Notification.types'
 
-interface ContainerProp {
+interface NotificationProp {
     type: NotificationType
 }
 
@@ -21,13 +21,13 @@ export const Notifications = styled.div`
     row-gap: 0.5rem;
 `
 
-export const Notification = styled.div<ContainerProp>`
+export const Notification = styled.div<NotificationProp>`
     display: flex;
     align-items: center;
     justify-content: flex-start;
     position: relative;
     overflow: hidden;
-    min-width: 20rem;
+    max-width: 30rem;
     padding: 1rem 0.5rem;
     background-color: var(--gray-0);
     border-radius: 0.5rem;
@@ -35,7 +35,7 @@ export const Notification = styled.div<ContainerProp>`
     transition: all 0.5s;
 
     opacity: 0;
-    animation: ${fade} ease-in-out ${DISPLAY_TIME}s;
+    animation: ${fade} ease-in-out ${SECONDS_OF_DISPLAY}s;
     animation-fill-mode: forwards;
 
     svg:first-child {

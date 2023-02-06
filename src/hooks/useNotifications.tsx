@@ -8,12 +8,13 @@ import React, {
 import { v4 as uuidv4 } from 'uuid'
 
 import NotificationComponent from '../components/Notification'
+import { SECONDS_OF_DISPLAY } from '../components/Notification/Notification.constants'
 import { Notifications } from '../components/Notification/Notification.styles'
 import { Notification } from '../components/Notification/Notification.types'
 
 interface NotificationContextProps {
-    success(title: string, message: string): void
-    error(title: string, message: string): void
+    showSuccess(title: string, message: string): void
+    showError(title: string, message: string): void
 }
 
 const NotificationContext = createContext<NotificationContextProps>(
@@ -22,6 +23,12 @@ const NotificationContext = createContext<NotificationContextProps>(
 
 const NotificationProvider = ({ children }: { children: React.ReactNode }) => {
     const [notifications, setNotifications] = useState<Notification[]>([])
+
+    const remove = useCallback((id: string) => {
+        setNotifications((state) =>
+            state.filter((notification) => notification.id !== id)
+        )
+    }, [])
 
     const add = useCallback(
         ({ type, title, message }: Omit<Notification, 'id'>) => {
@@ -35,49 +42,48 @@ const NotificationProvider = ({ children }: { children: React.ReactNode }) => {
             }
 
             setNotifications((state) => [...state, notification])
+
+            setTimeout(() => remove(id), SECONDS_OF_DISPLAY * 1000)
         },
-        []
+        [remove]
     )
 
-    const close = useCallback((id: string) => {
-        setNotifications((state) =>
-            state.filter((notification) => notification.id !== id)
-        )
-    }, [])
-
-    const success = useCallback(
+    const showSuccess = useCallback(
         (title, message) => add({ type: 'success', title, message }),
         [add]
     )
 
-    const error = useCallback(
+    const showError = useCallback(
         (title, message) => add({ type: 'error', title, message }),
         [add]
     )
 
     const value = useMemo(
         () => ({
-            success,
-            error,
+            showSuccess,
+            showError,
         }),
-        [success, error]
+        [showSuccess, showError]
     )
 
     return (
         <NotificationContext.Provider value={value}>
             {children}
-            <Notifications>
-                {notifications.map(({ id, type, title, message }) => (
-                    <NotificationComponent
-                        key={id}
-                        id={id}
-                        type={type}
-                        title={title}
-                        message={message}
-                        onClose={close}
-                    />
-                ))}
-            </Notifications>
+
+            {notifications.length > 0 && (
+                <Notifications>
+                    {notifications.map(({ id, type, title, message }) => (
+                        <NotificationComponent
+                            key={id}
+                            id={id}
+                            type={type}
+                            title={title}
+                            message={message}
+                            onClose={remove}
+                        />
+                    ))}
+                </Notifications>
+            )}
         </NotificationContext.Provider>
     )
 }

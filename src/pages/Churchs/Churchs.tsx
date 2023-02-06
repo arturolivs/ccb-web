@@ -6,14 +6,28 @@ import * as S from './Churchs.styles'
 import { useNotification } from '../../hooks/useNotifications'
 
 const Churths = () => {
-    const { success, error } = useNotification()
+    const { showSuccess, showError } = useNotification()
     return (
         <S.Churths>
-            <S.BT onClick={() => success('Sucesso', 'mensagem sucesso !!')}>
+            <S.BT
+                onClick={() =>
+                    showSuccess(
+                        'TituloSucesso',
+                        'mensagem sucesso !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+                    )
+                }
+            >
                 notificação sucesso
             </S.BT>
 
-            <S.BT onClick={() => error('Erro', 'mensagem erro !!')}>
+            <S.BT
+                onClick={() =>
+                    showError(
+                        'Titulo Erro',
+                        'mensagem erro !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+                    )
+                }
+            >
                 notificação erro
             </S.BT>
             <S.Title>Igrejas</S.Title>
