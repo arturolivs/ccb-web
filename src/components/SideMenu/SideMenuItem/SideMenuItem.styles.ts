@@ -6,12 +6,12 @@ export const SideMenuItem = styled.li`
     column-gap: 5px;
 
     width: 100%;
-    height: 60px;
+    height: 4rem;
     color: var(--primary-color-light-4);
     list-style: none;
-    padding-left: 15px;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
+    padding-left: 1rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
     cursor: pointer;
     transition: all 0.3s;
 

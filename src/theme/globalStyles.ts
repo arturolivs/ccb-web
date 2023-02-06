@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, keyframes } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   
@@ -18,7 +18,8 @@ const GlobalStyle = createGlobalStyle`
       --gray-5: #808080;
       --gray-6: #595959;
 
-      --danger: #f84261;
+      --success: #46D664;
+      --error: #f84261;
   } 
 
   body {
@@ -45,7 +46,14 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+  
+`
 
+export const fade = keyframes`
+  0% { opacity: 0 }
+  5% { opacity: 1 } 
+  95% { opacity: 1 }
+  100% { opacity: 0 }
 `
 
 export default GlobalStyle

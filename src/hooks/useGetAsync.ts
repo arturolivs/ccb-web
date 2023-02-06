@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios, { AxiosRequestConfig } from 'axios'
+import { useNotification } from './useNotifications'
 
 axios.defaults.baseURL = 'http://localhost:3000'
 
@@ -7,15 +8,16 @@ const useGetAsync = <T>(url: string, params?: AxiosRequestConfig) => {
     const [data, setData] = useState<T>()
     const [error, setError] = useState<string>()
     const [loading, setLoading] = useState<boolean>(true)
+    const { showError } = useNotification()
 
     useEffect(() => {
-        ;(async () => {
+        async function run() {
             try {
                 const response = await axios.get<T>(url, params)
                 setData(response.data)
             } catch (err) {
                 if (axios.isAxiosError(err)) {
-                    setError(`Error with Message: ${err.message}`)
+                    setError(err.message)
                 } else {
                     setError(err as string)
                 }
@@ -23,10 +25,17 @@ const useGetAsync = <T>(url: string, params?: AxiosRequestConfig) => {
             } finally {
                 setLoading(false)
             }
-        })()
+        }
+
+        run()
     }, [url, params])
 
-    return [data, error, loading] as const
+    useEffect(
+        () => (error ? showError('Ocorreu um erro', error) : undefined),
+        [error, showError]
+    )
+
+    return { data, error, loading } as const
 }
 
 export default useGetAsync

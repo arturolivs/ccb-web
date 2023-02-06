@@ -6,13 +6,13 @@ export const Title = styled.h1``
 export const Table = styled.table`
     width: 100%;
     border-collapse: collapse;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     overflow: hidden;
 `
 
 export const Header = styled.th`
     color: var(--primary-color-dark-2);
-    padding: 12px 15px;
+    padding: 1rem;
     border-bottom: 1px solid var(--primary-color-light-3);
 `
 
@@ -25,10 +25,10 @@ export const Row = styled.tr`
         color: var(--primary-color-light-1);
         font-weight: bold;
         background-color: var(--primary-color-light-4);
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.15);
 
         svg.fa-trash-can {
-            color: var(--danger);
+            color: var(--error);
         }
 
         svg.fa-pen {
@@ -38,16 +38,16 @@ export const Row = styled.tr`
 `
 
 export const Cell = styled.td`
-    padding: 15px 10px;
+    padding: 1rem 0.625rem;
     text-align: center;
 `
 
 export const CellIcon = styled.td`
-    padding: 15px 10px;
+    padding: 1rem 0.625rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    column-gap: 15px;
+    column-gap: 1rem;
 `
 
 export const Button = styled(Link)`
@@ -59,10 +59,10 @@ export const Button = styled(Link)`
     height: 2rem;
     border: 0;
     border-radius: 50%;
-    padding: 5px;
+    padding: 0.5rem;
     transition: all 0.3s;
 
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
 
     svg {
