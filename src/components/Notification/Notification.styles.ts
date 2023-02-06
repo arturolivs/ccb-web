@@ -10,10 +10,10 @@ interface NotificationProp {
 
 export const Notifications = styled.div`
     position: fixed;
-    top: 50%;
+    top: 90%;
     left: 50%;
     transform: translate(-50%, 0);
-
+    contain: size;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
